@@ -2,6 +2,8 @@
 
 A robust TypeScript/Express API for foreign exchange conversion with authentication and audit trail.
 
+Important Notice: The ExchangeRate API has usage limits for free users. Consider upgrading to a paid plan for production use.
+
 ## Features
 
 - 🔐 JWT Authentication with secure password hashing
@@ -169,38 +171,6 @@ npm run dev:simple # Start with ts-node (simpler, slower)
 5. **Controllers**: Add request handlers in \`src/controllers/\`
 6. **Routes**: Define endpoints in \`src/routes/\`
 
-## Deployment
-
-### Railway Deployment
-
-1. Install Railway CLI:
-   \`\`\`bash
-   npm install -g @railway/cli
-   \`\`\`
-
-2. Login and deploy:
-   \`\`\`bash
-   railway login
-   railway init
-   railway up
-   \`\`\`
-
-3. Set environment variables in Railway dashboard
-
-### Manual Deployment
-
-1. Build the application:
-   \`\`\`bash
-   npm run build
-   \`\`\`
-
-2. Set production environment variables
-
-3. Start the server:
-   \`\`\`bash
-   NODE_ENV=production node dist/server.js
-   \`\`\`
-
 ## Security Features
 
 - **JWT Authentication**: Secure token-based authentication
@@ -218,8 +188,6 @@ npm run dev:simple # Start with ts-node (simpler, slower)
 The API provides multiple health check endpoints:
 
 - \`/health\` - Basic health status
-- \`/api/health/ready\` - Readiness probe (dependencies check)
-- \`/api/health/live\` - Liveness probe (application status)
 
 ### Logging
 
@@ -245,19 +213,19 @@ All user actions are logged in the events collection:
 
 # Register user
 
-curl -X POST http://localhost:5000/api/auth/register \\
+curl -X POST http://localhost:5700/api/auth/register \\
 -H "Content-Type: application/json" \\
 -d '{"email":"test@example.com","password":"Test123!","name":"Test User"}'
 
 # Login
 
-curl -X POST http://localhost:5000/api/auth/login \\
+curl -X POST http://localhost:5700/api/auth/login \\
 -H "Content-Type: application/json" \\
 -d '{"email":"test@example.com","password":"Test123!"}'
 
 # Create conversion (replace TOKEN with actual JWT)
 
-curl -X POST http://localhost:5000/api/conversions \\
+curl -X POST http://localhost:5700/api/conversions \\
 -H "Content-Type: application/json" \\
 -H "Authorization: Bearer TOKEN" \\
 -d '{"fromCurrency":"USD","toCurrency":"NGN","amount":1000}'
@@ -296,16 +264,3 @@ Set environment variables for detailed logging:
 \`\`\`bash
 DEBUG=\* npm run dev
 \`\`\`
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes with proper TypeScript types
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
-" > README.md
