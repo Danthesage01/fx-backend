@@ -60,8 +60,7 @@ const startServer = async (): Promise<Server> => {
   const PORT = process.env.PORT || 5700;
   const httpServer = app.listen(PORT, () => {
    console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-   console.log(`📡 API available at: http://localhost:${PORT}/api/v1`);
-   console.log(`🏥 Health check at: http://localhost:${PORT}/health`);
+
 
    if (process.env.NODE_ENV === 'development') {
     console.log(`🔧 Development mode - CORS enabled for localhost`);

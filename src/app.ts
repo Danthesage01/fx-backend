@@ -40,10 +40,9 @@ export const createApp = (): Application => {
 
    const allowedOrigins = [
     process.env.FRONTEND_URL || 'http://localhost:3000',
-    'http://localhost:3000',
     'http://localhost:3001',
-    'https://localhost:3000',
-    'https://localhost:3001'
+    'https://localhost:5173',
+    'https://localhost:5174'
    ];
 
    // In development, allow any localhost origin
@@ -120,7 +119,6 @@ export const createApp = (): Application => {
    version: '1.0.0',
    timestamp: new Date().toISOString(),
    environment: process.env.NODE_ENV,
-   documentation: '/api/v1/docs'
   });
  });
 
