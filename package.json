@@ -46,9 +46,7 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
+    "zod": "^3.22.4",
     "@types/bcryptjs": "^2.4.6",
     "@types/compression": "^1.7.5",
     "@types/cors": "^2.8.17",
@@ -58,7 +56,9 @@
     "@types/node": "^20.10.0",
     "@types/passport": "^1.0.17",
     "@types/passport-google-oauth20": "^2.0.16",
-    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-jwt": "^4.0.1"
+  },
+  "devDependencies": {
     "concurrently": "^8.2.2",
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.1",
