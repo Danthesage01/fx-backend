@@ -60,15 +60,15 @@ nano .env
    npm run dev
    \`\`\`
 
-## Environment Variables
+## Environment Variables - full example is in the .env.example
 
 \`\`\`env
 NODE_ENV=development
-PORT=5000
+PORT=5700
 
 # Database
 
-MONGODB_URI=mongodb://localhost:27017/fx-converter
+MONGODB_URI""
 
 # For MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/fx-converter
 
@@ -99,8 +99,8 @@ RATE_LIMIT_MAX_REQUESTS=100
 - \`POST /api/auth/login\` - User login
 - \`GET /api/auth/profile\` - Get user profile
 - \`PUT /api/auth/profile\` - Update user profile
-- \`POST /api/auth/change-password\` - Change password
-- \`POST /api/auth/logout\` - User logout
+
+Important notice: Complete auth flow which include - forgot password, reset password, verify email and other essentials were not implemented because of time constraints.
 
 ### Conversions
 
@@ -264,3 +264,7 @@ Set environment variables for detailed logging:
 \`\`\`bash
 DEBUG=\* npm run dev
 \`\`\`
+
+### Test the API with script
+
+npm run test:api or input "/scripts/test-api.sh" in terminal
