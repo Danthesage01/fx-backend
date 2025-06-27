@@ -1,10 +1,10 @@
+// tsconfig.json
 {
  "compilerOptions": {
   "target": "ES2020",
   "module": "commonjs",
   "lib": [
-   "ES2020",
-   "DOM"
+   "ES2020"
   ],
   "outDir": "./dist",
   "rootDir": "./src",
@@ -52,13 +52,7 @@
   },
   "allowSyntheticDefaultImports": true,
   "experimentalDecorators": true,
-  "emitDecoratorMetadata": true,
-  "types": [
-   "node"
-  ],
-  "typeRoots": [
-   "./node_modules/@types"
-  ]
+  "emitDecoratorMetadata": true
  },
  "include": [
   "src/**/*"
